@@ -827,6 +827,7 @@ class analysis(QMainWindow):
         self.table = QTableWidget()
         self.table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.table.customContextMenuRequested.connect(self.showTableContextMenu)
+        self.table.setEditTriggers(QTableWidget.EditTrigger.AllEditTriggers)
         layout.addWidget(self.table)
 
         central_widget = QWidget(self)
@@ -1423,7 +1424,8 @@ class analysis(QMainWindow):
         engine = create_engine(f'{db_info}{g_Dbname}')
         table_name = getattr(self, 'current_table', None)
         if not table_name:
-            QMessageBox.warning(self, "Error", "No table is selected for display")
+            self.table.setRowCount(0)
+            self.table.setColumnCount(0)
             return
         tableData = f"SELECT * FROM `{table_name}`"
         try:
@@ -1443,7 +1445,8 @@ class analysis(QMainWindow):
         engine = create_engine(f'{db_info}{g_Dbname}')
         table_name = getattr(self, 'current_table', None)
         if not table_name:
-            QMessageBox.warning(self, "Error", "No table is selected for display")
+            self.table.setRowCount(0)
+            self.table.setColumnCount(0)
             return
         tableData = f"SELECT * FROM `{table_name}`"
         try:
