@@ -827,7 +827,6 @@ class analysis(QMainWindow):
         self.table = QTableWidget()
         self.table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.table.customContextMenuRequested.connect(self.showTableContextMenu)
-        self.table.setEditTriggers(QTableWidget.EditTrigger.AllEditTriggers)
         layout.addWidget(self.table)
 
         central_widget = QWidget(self)
