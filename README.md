@@ -140,4 +140,5 @@ Skills demonstrated in this project:
 `Python` • `PyQt6` • `Pandas` • `SQL` • `MySQL` • `SQLAlchemy` • `Matplotlib`
 
 ---
+[📊 Excel Data Analyzer – Presentation](presentation/Data_Analysis.pptx)
 
